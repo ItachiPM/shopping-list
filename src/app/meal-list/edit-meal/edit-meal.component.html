@@ -1,0 +1,41 @@
+<div class="mobile-ui">
+    <div class="mobile-ui__content">
+        <h1>Dodaj nowy posilek</h1>
+        <form [formGroup]="mealFormGroup">
+            <div class="mb-2">
+                <label for="name">Nazwa posiłku:</label>
+                <input formControlName="name" id="name" class="form-control" type="text">
+            </div>
+            <div>
+                <label for="description">Opis: </label>
+                <input placeholder="opcjonalnie..." formControlName="description" id="description" class="form-control" type="text">
+            </div>
+            <hr>
+            <div class="d-flex justify-content-between mb-3">
+                <h2>Składniki</h2>
+                <button (click)="onAddIngredient()" class="btn btn-success"><i class="bi bi-plus-lg"></i></button>
+            </div>
+            <div formArrayName="ingredients">
+                <div 
+                    class="d-flex form-row mb-2"
+                    *ngFor="let ingredientCtrl of controls; let i = index"
+                    [formGroupName]="i"
+                >
+                    <div class="col">
+                        <input formControlName="name" placeholder="Nazwa" class="form-control" type="text">    
+                    </div>
+                    <div>
+                        <input formControlName="count" placeholder="Ilość" class="form-control" type="number">
+                    </div>
+                    <button class="btn btn-danger ms-3" (click)="onRemoveIngredient(i)">
+                        <i class="bi bi bi-trash"></i>
+                      </button>
+                </div>
+            </div>
+            <hr>
+            <div class="d-flex justify-content-end">
+                <button (click)="onSubmit()" [disabled]="!mealFormGroup.valid || mealFormGroup.value.ingredients?.length! < 1" class="btn btn-success">Zapisz</button>
+            </div>
+        </form>
+    </div>
+</div>

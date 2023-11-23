@@ -1,0 +1,16 @@
+<div class="mobile-ui">
+  <div class="d-flex row align-items-center mb-4" style="max-width: 600px;">
+    <input class=" form-control mb-1" type="text" placeholder="Nazwa produktu..." [(ngModel)]="newProductName">
+    <button class="btn btn-success" (click)="onAddNewProduct()">Dodaj nowy produkt</button>
+  </div>
+  <div class="mobile-ui__content">
+    <ul *ngIf="productList.length > 0" class="content__list">
+      <app-product
+      *ngFor="let product of productList"
+      [product]="product"
+      [editable]="true"
+      ></app-product>
+    </ul>
+    <p *ngIf="productList.length === 0">Brak produktów, dodaj nowy produkt</p>
+  </div>
+</div>

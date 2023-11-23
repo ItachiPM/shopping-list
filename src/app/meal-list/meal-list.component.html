@@ -1,0 +1,15 @@
+<div class="mobile-ui">
+    <div class="add-product__content mb-2">
+      <button class="btn btn-success" (click)="addNewMeal()">Dodaj Posiłek</button>
+    </div>
+    <div class="mobile-ui__content">
+      <ul *ngIf="mealList.length > 0" class="content__list">
+        <app-meal
+        *ngFor="let meal of mealList"
+        [meal]="meal"
+        ></app-meal>
+      </ul>
+      <p *ngIf="mealList.length === 0">Brak posiłków, dodaj nowy posiłek</p>
+    </div>
+  </div>
+

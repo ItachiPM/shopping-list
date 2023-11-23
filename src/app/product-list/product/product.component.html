@@ -1,0 +1,18 @@
+<div class="product border rounded p-2 m-2" style="max-width: 600px;">
+  <div class="d-flex align-items-center justify-content-between row">
+    <h3 class="m-0 col-8">{{product.name}}</h3>
+    <div class="d-flex col-4 justify-content-between">
+      <div style="margin-right: 12px">
+        <input *ngIf="!editable" class="form-control" type="number" disabled  value="{{product.count}}">
+        <input *ngIf="editable" class="form-control" type="number" [(ngModel)]="productCount">    
+      </div>
+      <button class="btn btn-success" (click)="editable ? onAddProductToShoppingList() : onRemoveProductFromShoppingList()">
+        <i *ngIf="editable" class="bi bi-plus-lg"></i>
+        <i *ngIf="!editable" class="bi bi-check-lg"></i>
+      </button>
+      <button *ngIf="editable" class="btn btn-danger ms-1" (click)="onRemoveProduct()">
+        <i class="bi bi bi-trash"></i>
+      </button>
+    </div>  
+  </div>
+</div>

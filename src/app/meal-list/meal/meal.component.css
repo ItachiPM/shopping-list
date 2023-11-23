@@ -1,0 +1,16 @@
+.expanding-list {
+    list-style: none;
+    padding: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+  }
+  
+  /* Definicja animacji */
+  @keyframes expandCollapseAnimation {
+    from {
+      max-height: 0;
+    }
+    to {
+      max-height: 200px; /* Dostosuj wartość max-height do preferencji */
+    }
+  }

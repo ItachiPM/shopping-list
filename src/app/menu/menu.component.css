@@ -1,0 +1,36 @@
+.mobile-ui__menu {
+  background-color: blue;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.menu__list {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.menu__item {
+  margin-right: 10px;
+}
+
+.menu__link {
+  text-decoration: none;
+  color: white;
+  transition: background-color 0.3s;
+  padding: 10px;
+}
+
+.menu__link:hover {
+  border-radius: 10px;
+  background-color: lightblue;
+}
+
+.active {
+  border-radius: 10px;
+  background-color: lightblue;
+}

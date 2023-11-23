@@ -1,0 +1,12 @@
+<div class="mobile-ui">
+  <div class="mobile-ui__content">
+    <ul class="content__list" *ngIf="shoppingList.length > 0">
+      <app-product
+      *ngFor="let product of shoppingList"
+      [product]="product"
+      [editable]="false"
+      ></app-product>
+    </ul>
+    <p *ngIf="shoppingList.length === 0">Nie masz nic na liście rzeczy do kupienia</p>
+  </div>
+</div>
